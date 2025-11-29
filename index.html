@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAV技術の二重の戦略的影響：インフォグラフィック</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration for Future Look -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'futuristic-blue': '#00BFFF', // Deep Sky Blue (Primary Accent)
+                        'dark-bg': '#0D1117', // GitHub Dark Background
+                        'dark-card': '#161B22', // Slightly Lighter Dark Card
+                        'data-green': '#39FF14', // Neon Green for Data/Good
+                        'data-red': '#FF4500', // Orange Red for Conflict/Risk
+                        'gray-text': '#8B949E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'scan-line': {
+                            '0%': { transform: 'translateY(0%)' },
+                            '100%': { transform: 'translateY(100%)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'scan': 'scan-line 3s infinite alternate'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styles */
+        body {
+            background-color: #0D1117;
+            color: #C9D1D9;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Futuristic Glitch/Shadow Effect for Titles */
+        .glitch-text {
+            text-shadow: 
+                2px 2px 0 #FF4500, 
+                -2px -2px 0 #00BFFF;
+        }
+
+        /* Data Bar Styling */
+        .data-bar-bg {
+            background-color: #161B22;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+        }
+        .data-bar-fill-green {
+            background: linear-gradient(90deg, #39FF14, #00BFFF);
+            box-shadow: 0 0 8px #39FF14;
+        }
+        .data-bar-fill-red {
+            background: linear-gradient(90deg, #FF4500, #00BFFF);
+            box-shadow: 0 0 8px #FF4500;
+        }
+
+        /* Scan Line Effect for Section Headers */
+        .scan-container {
+            position: relative;
+            overflow: hidden;
+            padding: 8px 0;
+        }
+        .scan-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 191, 255, 0.5);
+            animation: scan-line 5s infinite;
+        }
+
+        /* Custom Card Styles */
+        .futuristic-card {
+            background-color: #161B22;
+            border: 1px solid #00BFFF;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+        .futuristic-card:hover {
+            box-shadow: 0 0 25px #00BFFF, 0 0 5px rgba(0, 191, 255, 0.5) inset;
+            transform: translateY(-5px);
+        }
+
+        /* Visual Separator for Dual Use */
+        .dual-use-separator {
+            position: relative;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        .dual-use-separator::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, #FF4500 0%, #00BFFF 50%, #39FF14 100%);
+            z-index: 0;
+        }
+        .dual-use-separator .icon-ring {
+            position: relative;
+            z-index: 10;
+            background: #0D1117;
+            padding: 10px 20px;
+            border: 2px solid #00BFFF;
+            border-radius: 9999px;
+            font-weight: bold;
+            color: #00BFFF;
+            text-shadow: 0 0 5px #00BFFF;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <!-- Header Section -->
+    <header class="text-center py-8 mb-12">
+        <h1 class="text-4xl md:text-6xl font-extrabold glitch-text text-white">UAVデュアルインパクト</h1>
+        <p class="text-lg md:text-2xl text-futuristic-blue mt-2">
+            無人航空機技術（ドローン）の二重の戦略的影響
+        </p>
+    </header>
+
+    <!-- Dual Use Section -->
+    <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        
+        <!-- CIVILIAN SIDE (Journalism) -->
+        <div class="p-6 futuristic-card animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="scan-container mb-4">
+                <h2 class="text-3xl font-bold text-data-green">情報の民主化：ドローンジャーナリズム</h2>
+            </div>
+            <p class="text-gray-text mb-6">UAVは、従来国家や大規模組織のみがアクセス可能だった空中視点を、一般市民や報道機関にも提供し、ニュース収集と配信を根本的に変革しました。</p>
+
+            <h3 class="text-xl font-semibold text-futuristic-blue mb-3">戦略的利点 (Strategic Advantages)</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="flex items-start">
+                    <span class="text-data-green mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">ストーリーテリングの強化：イベントに広範なコンテクストと独自の空中視点を提供。</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-data-green mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">アクセスと即応性：自然災害などアクセス困難な地域での迅速な情報収集。</span>
+                </li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-futuristic-blue mt-6 mb-3">倫理的・法的課題 (Ethical Risks)</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="flex items-start">
+                    <span class="text-data-red mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">プライバシー侵害：高解像度カメラによる「監視されない権利」との衝突。</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-data-red mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">規制の遅れ：技術進化に法整備が追いつかず、国際的な運用で複雑な課題が発生。</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MILITARY SIDE (Warfare) -->
+        <div class="p-6 futuristic-card animate-fade-in" style="animation-delay: 0.4s;">
+            <div class="scan-container mb-4">
+                <h2 class="text-3xl font-bold text-data-red">戦場の変革：戦争兵器としてのドローン</h2>
+            </div>
+            <p class="text-gray-text mb-6">ドローンはISR（情報・監視・偵察）から、精密攻撃、そして「数と量」による飽和攻撃を担う中心的な兵器へと進化しています。</p>
+
+            <h3 class="text-xl font-semibold text-futuristic-blue mb-3">戦略的役割 (Strategic Roles)</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="flex items-start">
+                    <span class="text-data-red mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">飽和攻撃戦略：安価な消耗品を大量投入し、高価な防空システムを無力化。</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-data-red mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">非対称的コスト交換：低コストのドローン迎撃に高価なSAMを使用させる。</span>
+                </li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-futuristic-blue mt-6 mb-3">戦術的課題：電子戦（EW） (Tactical Challenge: EW)</h3>
+            <ul class="space-y-3 text-sm">
+                <li class="flex items-start">
+                    <span class="text-data-red mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">RFスペクトラムの争奪：ドローンの有効性はEW（電子戦）耐性によって決定される。</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-data-red mr-2 text-xl">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="text-white">技術の即応性：新機能の開発・展開が「数日〜数週間」で要求される。</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Separator for Technological Convergence -->
+    <div class="dual-use-separator animate-fade-in" style="animation-delay: 0.6s;">
+        <div class="icon-ring text-xl">技術的収斂 (Technological Convergence)</div>
+    </div>
+
+    <!-- Data Comparison Section (MQ-9B vs TB2) -->
+    <section class="max-w-5xl mx-auto mb-20 p-6 futuristic-card animate-fade-in" style="animation-delay: 0.8s;">
+        <h2 class="text-3xl font-bold text-center mb-8 text-futuristic-blue">主要軍用UAV性能比較：コスト vs. パフォーマンス</h2>
+
+        <div class="space-y-6">
+            <!-- Max Takeoff Weight -->
+            <div class="data-point">
+                <p class="text-lg font-semibold mb-2">最大離陸重量 (Max Takeoff Weight)</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-1/3 text-data-red font-mono">MQ-9B: 5,670 kg</div>
+                    <div class="flex-grow data-bar-bg h-6 rounded-full overflow-hidden relative">
+                        <!-- 5670 / 5670 = 100% -->
+                        <div class="data-bar-fill-red h-full rounded-full" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 mt-2">
+                    <div class="w-1/3 text-data-green font-mono">TB2: 650 kg</div>
+                    <div class="flex-grow data-bar-bg h-6 rounded-full overflow-hidden relative">
+                        <!-- 650 / 5670 ≈ 11.5% -->
+                        <div class="data-bar-fill-green h-full rounded-full" style="width: 11.5%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Endurance -->
+            <div class="data-point">
+                <p class="text-lg font-semibold mb-2 mt-6">航続時間 (Endurance)</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-1/3 text-data-red font-mono">MQ-9B: 40 h</div>
+                    <div class="flex-grow data-bar-bg h-6 rounded-full overflow-hidden relative">
+                        <!-- 40 / 40 = 100% -->
+                        <div class="data-bar-fill-red h-full rounded-full" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 mt-2">
+                    <div class="w-1/3 text-data-green font-mono">TB2: 27 h</div>
+                    <div class="flex-grow data-bar-bg h-6 rounded-full overflow-hidden relative">
+                        <!-- 27 / 40 = 67.5% -->
+                        <div class="data-bar-fill-green h-full rounded-full" style="width: 67.5%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Range -->
+            <div class="data-point">
+                <p class="text-lg font-semibold mb-2 mt-6">航続距離 (Range)</p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-1/3 text-data-red font-mono">MQ-9B: 7,408 km</div>
+                    <div class="flex-grow data-bar-bg h-6 rounded-full overflow-hidden relative">
+                        <!-- 7408 / 7408 = 100% -->
+                        <div class="data-bar-fill-red h-full rounded-full" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 mt-2">
+                    <div class="w-1/3 text-data-green font-mono">TB2: 278 km</div>
+                    <div class="flex-grow data-bar-bg h-6 rounded-full overflow-hidden relative">
+                        <!-- 278 / 7408 ≈ 3.75% -->
+                        <div class="data-bar-fill-green h-full rounded-full" style="width: 3.75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center text-gray-text text-sm italic mt-8">
+            <span class="text-data-red">MQ-9B</span>は長距離・戦略的ISR/打撃力、<span class="text-data-green">TB2</span>はコスト効果と柔軟性に優れる戦術的消耗品。
+        </p>
+    </section>
+
+    <!-- Future Outlook Section -->
+    <section class="max-w-7xl mx-auto mb-20">
+        <div class="scan-container mb-8 text-center animate-fade-in" style="animation-delay: 1.0s;">
+            <h2 class="text-3xl font-bold text-futuristic-blue">将来展望：AIと自律性の統合</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Forecast Card 1 -->
+            <div class="p-6 futuristic-card text-center animate-fade-in" style="animation-delay: 1.2s;">
+                <h3 class="text-xl font-bold text-data-green mb-3">AIによる自律化</h3>
+                <p class="text-gray-text">ジャーナリズム分野では、AIが倫理的境界を考慮した飛行パスの自動設定やデータ収集を自律化。効率と安全性が向上。</p>
+            </div>
+
+            <!-- Forecast Card 2 -->
+            <div class="p-6 futuristic-card text-center animate-fade-in" style="animation-delay: 1.4s;">
+                <h3 class="text-xl font-bold text-data-red mb-3">LAWS (完全自律型兵器)</h3>
+                <p class="text-gray-text">軍事分野では、人間による介入を最小限に抑えたスウォーム戦闘能力（LAWS）が主要目標に。倫理的議論が激化。</p>
+            </div>
+
+            <!-- Forecast Card 3 -->
+            <div class="p-6 futuristic-card text-center animate-fade-in" style="animation-delay: 1.6s;">
+                <h3 class="text-xl font-bold text-futuristic-blue mb-3">政策提言：EW優先</h3>
+                <p class="text-gray-text">EW防御能力の強化と、安価なドローンに対する多層的迎撃システムの開発に、防衛戦略の投資をシフトすべき。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-gray-text border-t border-futuristic-blue/30">
+        <p>SOURCE: UAV技術の軍事・報道利用研究レポートに基づく</p>
+    </footer>
+
+    <script>
+        // Smooth fade-in for all sections
+        document.querySelectorAll('.animate-fade-in').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.animationName = 'none';
+
+            setTimeout(() => {
+                el.style.animationName = 'fade-in';
+            }, 100 + index * 200);
+        });
+    </script>
+</body>
+</html>
